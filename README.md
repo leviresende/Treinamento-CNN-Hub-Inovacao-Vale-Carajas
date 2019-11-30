@@ -10,6 +10,11 @@ Exemplo prático de treinamento de uma rede neural convolucional para detecção
 
 Engenheiro Eletricista pelo Instituto Federal da Bahia. É mestrando em Instrumentação, Controle e Automação de Processos de Mineração pelo Instituto Tecnológico Vale e Universidade Federal de Ouro Preto.
 
+
+### Email:
+
+andre.almdsantos@gmail.com
+
 ## Biliotecas Necessárias
 
 As bibliotecas necessárias para rodar os códigos estão listadas abaixo:

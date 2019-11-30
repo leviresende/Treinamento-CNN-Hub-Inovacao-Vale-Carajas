@@ -94,14 +94,14 @@ class Net(nn.Module):
     # Função inicial que define as camadas da rede
     def __init__(self):
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(3, 6, 5)
-        self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(16 * 53 * 53, 120)
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 2)
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=6, kernel_size=5)
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.conv2 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
+        self.fc1 = nn.Linear(in_features=16 * 53 * 53, out_features=120)
+        self.fc2 = nn.Linear(in_features=120, out_features=84)
+        self.fc3 = nn.Linear(in_features=84, out_features=2)
 
-    # Função que define a passagem dos dados pela rede
+    # Função necessária que define a passagem dos dados pela rede
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
@@ -126,7 +126,7 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 # Loop de treinamento da rede 
 # (Poder ser encapsulado em uma função!)
 # *****************************************************************************
-for epoch in range(50):  # loop over the dataset multiple times
+for epoch in range(25):  # loop over the dataset multiple times (Épocas)
 
     running_loss = 0.0
     for i, data in enumerate(dataloaders['treinamento'], 0):
@@ -190,5 +190,4 @@ with torch.no_grad():
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
 
-print('Taxa de classificações corretas para as 60 imagens de teste: %d %%' % (
-    100 * correct / total))
+print(f'Taxa de classificações corretas para as 60 imagens de teste: {(100 * correct / total)} %')
