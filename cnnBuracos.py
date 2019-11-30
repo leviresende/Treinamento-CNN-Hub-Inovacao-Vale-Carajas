@@ -28,6 +28,7 @@ data_transforms = {
 }
 
 # Caminho das pastas de imagens para treinamento e teste
+# Mude este caminho de acordo o seu sistema!!!
 # *****************************************************************************
 data_dir = 'D:\Documentos\Vale - Hub Inovação\ImagensCNNBuracos'
 
@@ -150,6 +151,7 @@ for epoch in range(50):  # loop over the dataset multiple times
 print('Finished Training')
 
 # Etapa para salvar o modelo da rede treinanda
+# Mude este caminho de acordo o seu sistema!!!
 # *****************************************************************************
 PATH = 'D:\Documentos\Vale - Hub Inovação\ImagensCNNBuracos/rede.pth'
 torch.save(net.state_dict(), PATH)
