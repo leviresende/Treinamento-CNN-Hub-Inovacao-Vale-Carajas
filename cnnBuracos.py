@@ -126,7 +126,7 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 # Loop de treinamento da rede 
 # (Poder ser encapsulado em uma função!)
 # *****************************************************************************
-for epoch in range(25):  # loop over the dataset multiple times (Épocas)
+for epoch in range(15):  # loop over the dataset multiple times (Épocas)
 
     running_loss = 0.0
     for i, data in enumerate(dataloaders['treinamento'], 0):
